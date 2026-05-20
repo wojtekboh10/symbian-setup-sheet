@@ -46,7 +46,7 @@ Why? Because you won't be able to install most softwares until you do this.
     - You can set date to current
 - Before you install any software on your hone you need to open ROM Patcher Plus, switch both Install Server RP+ and Open4All RP+ to green (not blue).
 
-## Internet setup
+## Internet setup (To validate)
 
 Why? To test if it even works and configure switching to Wi-Fi if available (optional).
 
@@ -57,3 +57,5 @@ Why? To test if it even works and configure switching to Wi-Fi if available (opt
     - On better connection: Stay connected
     - Destination: Internet
     - Next, Done
+- Add connections in options
+- Test Opera Mini in some basic pages (google.com, wikipedia.org)
