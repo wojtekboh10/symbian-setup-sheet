@@ -9,7 +9,7 @@ How to configure your Nokia Symbian phone in 2026
 Why? To be sure that any old software on your phone won't casue problems.
 
 - Remember to backup your files from phone memory (files, contacts, calendar, etc.). [Nokia PC Suite](https://archive.org/details/pc-suite-7.1) works well for that.
-- Enter number *#73070# to reset your phone. Enter security code (12345 by default). Don't use build in option to factory restet the phone as is does not delete installed applications.
+- Enter number *#7370# to reset your phone. Enter security code (12345 by default). Don't use build in option to factory restet the phone as is does not delete installed applications.
 - Power on the phone. Skip first time configuration questions (press "No" few times) until you reach homescreen.
 
 ## Unlocking the phone
@@ -51,14 +51,22 @@ Why? Because you won't be able to install most softwares until you do this.
 Why? To test if it even works and configure switching to Wi-Fi if available (optional).
 
 - Install Opera Mini web browser
+- Panel sterowania -> Ustawienia -> Connection -> Sieci docelowe -> Internet
+- Add packet data to Internet group
+- Test Opera Mini in some basic pages (google.com, wikipedia.org)
+
+To configure automatic switch to Wi-fi if available:
+- Add Wi-fi connections
 - Install and configure SmartConnect (it could already be be preinstalled, search for icon with antenna and "SC" name)
     - New Group
     - Group name: abc (or anything)
     - On better connection: Stay connected
     - Destination: Internet
-    - Next, Done
-- Add connections in options
-- Test Opera Mini in some basic pages (google.com, wikipedia.org)
+    - Next, Select All, Done
+    - Change priority if needed
+    - Click Back
+    - Options on abc -> Advanced -> Settings -> Diable notification level and prompting on new connection
+
 
 ## Internet fixes
 
@@ -68,10 +76,10 @@ Some fixes are required for centain softwares to work. You can install them all,
     - Export networking_improvements.zip to C: drive while the phone is unlocked
 - TLS 1.2 upgrade
     - Required to speed up GPS localisation
-    - Install MBedTLS.sis
+    - Install MBedTLS.sis (Select to install TLS 1.2 olny, deselect CA Upgrade)
     - Extract ssl.zip to C: drive while the phone is unlocked
 - CACerts update
-    - Optional, it may help in some cases
+    - Optional, it may help in some cases (I think it's inside TLS upgrade as well.)
     - Extract CACerts.zip to C: drive while the phone is unlocked
 
 ## Email setup
@@ -98,3 +106,11 @@ There are 2 options. One with profimail program, second with build in email soft
     - Incomming messages server: imap.wp.pl
     - Outgoing messages server: smtp.wp.pl
     - Rest is the same as in Gmail account
+
+## MMS setup
+
+Tested on T-Mobile
+
+## Minor things
+- Change theme to dark one with Darkmod.sis
+- Disable camera sounds with QuietCam.sis
