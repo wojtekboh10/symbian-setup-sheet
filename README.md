@@ -1,8 +1,7 @@
 # Symbian Setup Sheet
 
 How to configure your Nokia Symbian phone in 2026
-
-
+Here are some infirmation I would like to know before I started using Nokia E52 as my daily device.
 
 ## Factory reset
 
@@ -111,6 +110,21 @@ There are 2 options. One with profimail program, second with build in email soft
 
 Tested on T-Mobile
 
+- Create access point:
+    - Settings -> Connection -> Packet data -> Access point -> "MMS"
+- In 
+
 ## Minor things
 - Change theme to dark one with Darkmod.sis
 - Disable camera sounds with QuietCam.sis
+
+## Maps setup
+- Artem
+
+## Increase GPS startup speed
+
+- Diable all location sources expect unsassisted GPS
+- Open maps to enable GPS in your phone and perform cold start
+- Enable all other location sources
+- Set location server to supl.grapheneos.org (or supl.google.com)
+- Longer explanation can be found here: https://github.com/mahomaps/mm-v1
