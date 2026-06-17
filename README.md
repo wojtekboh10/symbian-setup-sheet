@@ -9,11 +9,18 @@ All decribed things were tested on my phone in polish language, so there may be 
 
 ## What can you achieve?
 
-| a |   | 1 |   |   |
-|---|---|---|---|---|
-| b |   | 2 |   |   |
-| c |   | 3 |   |   |
-| d |   | 4 |   | d |
+| What         | Configuration | External Software | Networking improvements | TLS Upgrade     |   |
+|--------------|---------------|-------------------|-------------------------|-----------------|---|
+| Phone calls  | -             | -                 | -                       | -               |   |
+| SMS          | -             | -                 | -                       | -               |   |
+| MMS          | **Required**  | -                 | -                       | -               |   |
+| Email        | **Required**  | Optional          | **Recommended**         | **Recommended** |   |
+| Web browsing | -             | **Required**      | -                       | Optional        |   |
+| Maps         | -             | **Required**      | -                       | Optional        |   |
+| Basic GPS    | -             | -                 | -                       | -               |   |
+| Assisted GPS | **Required**  | -                 | -                       | **Required**    |   |
+|              |               |                   |                         |                 |   |
+|              |               |                   |                         |                 |   |
 
 ## Factory reset
 
