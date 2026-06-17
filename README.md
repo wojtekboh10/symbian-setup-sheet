@@ -9,6 +9,12 @@ All decribed things were tested on my phone in polish language, so there may be 
 
 ## What can you achieve?
 
+| a |   | 1 |   |   |
+|---|---|---|---|---|
+| b |   | 2 |   |   |
+| c |   | 3 |   |   |
+| d |   | 4 |   | d |
+
 ## Factory reset
 
 Why? To be sure that any old software on your phone won't casue problems.
