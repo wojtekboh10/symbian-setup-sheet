@@ -2,6 +2,12 @@
 
 How to configure your Nokia Symbian phone in 2026
 Here are some infirmation I would like to know before I started using Nokia E52 as my daily device.
+It's just a cheat sheet, not a foolproof, step by step instruction.
+Let me know in [issues](https://github.com/wojtekboh10/symbian-setup-sheet/issues) if something is confusing or wrong.
+I'll maybe add it to this sheet (or only answer with message).
+All decribed things were tested on my phone in polish language, so there may be some translation errors (sorry!).
+
+## What can you achieve?
 
 ## Factory reset
 
@@ -108,11 +114,29 @@ There are 2 options. One with profimail program, second with build in email soft
 
 ## MMS setup
 
-Tested on T-Mobile
+Tested on T-Mobile in Poland. (In fact [T-Mobile configuration](https://www.t-mobile.pl/informacje-i-pomoc/pomoc-techniczna/konfiguracja-mms) didn't work, I had to add 8080 port number.)
+If you use different provider check it's server configuration.
 
 - Create access point:
     - Settings -> Connection -> Packet data -> Access point -> "MMS"
-- In 
+- In Target Networks add MMS access point in MMS group
+- Set MMS access point settings:
+    - MMS
+    - Packet data
+    - mms
+    - mms
+    - No
+    - Leave empty
+    - Normal
+    - http://mms/servlets/mms
+    - Automatic
+    - Options -> Advanced settings
+        - IPv4
+        - Automatic
+        - Automatic
+        - 213.158.194.226
+        - 8080
+- Main menu -> Messages -> Options -> Settings -> MMS -> Access Point in use -> MMS
 
 ## Minor things
 - Change theme to dark one with Darkmod.sis
