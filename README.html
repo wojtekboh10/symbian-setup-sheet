@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="symbian-setup-sheet">Symbian Setup Sheet</h1>
+<h2 id="how-to-configure-your-nokia-symbian-phone-in-2026">How to configure your Nokia Symbian phone in 2026.</h2>
+<p>Here is some information I would like to know before I started using <a href="https://en.wikipedia.org/wiki/Nokia_E52/E55">Nokia E52</a> as my daily device.
+It's just a cheat sheet, not a foolproof, step by step instruction.
+Let me know in <a href="https://github.com/wojtekboh10/symbian-setup-sheet/issues">issues</a> if something is confusing or wrong.
+I'll maybe add it to this sheet (or only answer with message).
+All described things were tested on my phone in polish language, so there may be some translation errors (sorry!).</p>
+<h2 id="what-can-you-achieve">What can you achieve?</h2>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Configuration</th>
+<th>External Software</th>
+<th>Networking improvements</th>
+<th>TLS Upgrade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phone calls</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>SMS</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>MMS</td>
+<td><strong>Required</strong></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Email</td>
+<td><strong>Required</strong></td>
+<td><a href="https://www.lonelycatgames.com/apps/profimail-symbian">Optional</a></td>
+<td><strong>Recommended</strong></td>
+<td><strong>Recommended</strong></td>
+</tr>
+<tr>
+<td>Web browsing</td>
+<td>-</td>
+<td><a href="http://www.m.opera.com/?act=opts&amp;vid=0x9c7f9c859a2dd90a&amp;ua=NokiaE90"><strong>Required</strong></a></td>
+<td>-</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>Maps</td>
+<td>-</td>
+<td><a href="https://github.com/artem78/s60-maps"><strong>Required</strong></a></td>
+<td>-</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>Basic GPS</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Assisted GPS</td>
+<td><strong>Required</strong></td>
+<td>-</td>
+<td>-</td>
+<td><strong>Required</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="factory-reset">Factory reset</h2>
+<p>Why? To be sure that any old software on your phone won't cause problems.</p>
+<ul>
+<li>Remember to back up your files from phone memory (files, contacts, calendar, etc.). <a href="https://archive.org/details/pc-suite-7.1">Nokia PC Suite</a> works well for that.</li>
+<li>Enter number *#7370# to reset your phone. Enter security code (12345 by default). Don't use build in option to factory reset the phone as it does not delete installed applications.</li>
+<li>Power on the phone. Skip first time configuration questions (press &quot;No&quot; few times) until you reach home screen.</li>
+</ul>
+<h2 id="unlocking-the-phone">Unlocking the phone</h2>
+<p>Why? Because you won't be able to install most software until you do this.</p>
+<ul>
+<li>Set date to 7.07.2022</li>
+<li>Install <a href="https://www.lonelycatgames.com/apps/xplore-symbian">X-plore</a></li>
+<li>Configure X-plore
+<ul>
+<li>Menu -&gt; Tools -&gt; Configuration</li>
+<li>Show ROM drive</li>
+<li>Show RAM drive</li>
+<li>Show system folders</li>
+</ul>
+</li>
+<li>Unpack <a href="https://mega.nz/folder/jH4QAL5J#jUQJTDDSmU-5z_GJBCMJAg/folder/uGw2nZqR">tmquarantine.zip</a> to C: drive
+<ul>
+<li>Highlight tmquarantine.zip in X-plore</li>
+<li>Menu -&gt; File -&gt; Open</li>
+<li>Highlight tmquarantine</li>
+<li>Menu -&gt; File -&gt; Extract to</li>
+<li>Highlight C: drive</li>
+<li>Menu -&gt; File -&gt; Select</li>
+</ul>
+</li>
+<li>Install <a href="https://mega.nz/folder/jH4QAL5J#jUQJTDDSmU-5z_GJBCMJAg/folder/uGw2nZqR">TM Mobile Security</a>
+<ul>
+<li>Set date to 7.07.2011</li>
+<li>Install</li>
+<li>Reset the phone</li>
+</ul>
+</li>
+<li>Unpack quarantine
+<ul>
+<li>Open TM Mobile Security</li>
+<li>Options -&gt; Quarantine List</li>
+<li>Options -&gt; Mark All</li>
+<li>Options -&gt; Restore</li>
+<li>Uninstall TM Mobile Security</li>
+</ul>
+</li>
+<li>Install <a href="https://mega.nz/folder/jH4QAL5J#jUQJTDDSmU-5z_GJBCMJAg/folder/uGw2nZqR">ROM Patcher Plus</a>
+<ul>
+<li>Set date to 7.07.2015</li>
+<li>Install</li>
+<li>You can set date to current</li>
+</ul>
+</li>
+<li>Before you install any software on your phone you need to open ROM Patcher Plus, switch both Install Server RP+ and Open4All RP+ to green (not blue)</li>
+</ul>
+<p>Alternative instructions: <a href="https://lpcwiki.miraheze.org/wiki/Jailbreaking_S60_devices">text</a>, <a href="https://www.youtube.com/watch?v=ewrOsBmLaLM">video</a></p>
+<h2 id="internet-connection-setup-to-validate">Internet connection setup (To validate)</h2>
+<p>Why? To test if it even works and configure switching to Wi-Fi if available (optional).</p>
+<ul>
+<li>Install <a href="http://www.m.opera.com/?act=opts&amp;vid=0x9c7f9c859a2dd90a&amp;ua=NokiaE90">Opera Mini</a> web browser</li>
+<li>Control Panel -&gt; Settings -&gt; Connection -&gt; Target Networks -&gt; Internet</li>
+<li>Add packet data to Internet group</li>
+<li>Test Opera Mini in some basic pages (google.com, wikipedia.org)</li>
+</ul>
+<p>To configure automatic switch to Wi-fi if available:</p>
+<ul>
+<li>Add Wi-fi connections</li>
+<li>Install and configure <a href="https://web.archive.org/web/20100813202340/http://www.birdstep.com/upload/Enterprise/smartconnect/Birdstep_SmartConnect_1.3.55-tct_sign.zip">SmartConnect</a> (it could already be preinstalled, search for icon with antenna and &quot;SC&quot; name)
+<ul>
+<li>New Group</li>
+<li>Group name: abc (or anything)</li>
+<li>On better connection: Stay connected</li>
+<li>Destination: Internet</li>
+<li>Next, Select All, Done</li>
+<li>Change priority if needed</li>
+<li>Click Back</li>
+<li>Options on abc -&gt; Advanced -&gt; Settings -&gt; Disable notification level and prompting on new connection</li>
+</ul>
+</li>
+</ul>
+<h2 id="internet-fixes">Internet fixes</h2>
+<p>Some fixes are required for certain software to work. You can install them all, or test if they are necessary for you.</p>
+<ul>
+<li><a href="https://github.com/mrRosset/Symbian-Archive/files/7231059/CACerts-2021-update.zip">Networking Improvements</a>
+<ul>
+<li>Required at least for email configuration</li>
+<li>Export networking_improvements.zip to C: drive while the phone is unlocked</li>
+</ul>
+</li>
+<li><a href="https://nnproject.cc/tls/">TLS 1.2</a> upgrade
+<ul>
+<li>Required to speed up GPS localization</li>
+<li>Install MBedTLS.sis (Select to install TLS 1.2 only, deselect CA Upgrade)</li>
+<li>Extract ssl.zip to C: drive while the phone is unlocked</li>
+</ul>
+</li>
+<li>CACerts update
+<ul>
+<li>Optional, it may help in some cases (I think it's inside TLS upgrade as well.)</li>
+<li>Extract <a href="https://github.com/mrRosset/Symbian-Archive/files/7231059/CACerts-2021-update.zip">CACerts.zip</a> to C: drive while the phone is unlocked</li>
+</ul>
+</li>
+</ul>
+<h2 id="email-setup">Email setup</h2>
+<p>There are 2 options. One with profimail program, second with build-in email software. Here is the second option. I managed it to work with Gmail and Wirtualna Polska (wp) accounts. Tried with Outlook but failed.</p>
+<ul>
+<li>Installed networking_improvements.zip are required for email.</li>
+<li>Enable any kind of Two Factor Authentication (2FA) in your Gmail account (do not skip this point)</li>
+<li>Generate password for application</li>
+<li>Configure new email account in your phone:
+<ul>
+<li>Enter email, password (enter your password for application, not the main one)</li>
+<li>Type: IMAP</li>
+<li>Incoming messages server: imap.gmail.com</li>
+<li>Incoming messages port: default (or 993)</li>
+<li>Encryption: yes (SSL/TLS)</li>
+<li>Outgoing messages server: smtp.gmail.com</li>
+<li>Outgoing messages port: default (or 465)</li>
+<li>Encryption: yes (SSL/TLS)</li>
+<li>Confirm configuration</li>
+</ul>
+</li>
+<li>Account should be added and working at this moment</li>
+<li>You can set default internet connection as abc to use Wi-Fi if possible or packet data if outside.</li>
+<li>For Wirtualna Polska (wp) configuration:
+<ul>
+<li>Enable 2FA and generate password for application</li>
+<li>Incoming messages server: imap.wp.pl</li>
+<li>Outgoing messages server: smtp.wp.pl</li>
+<li>Rest is the same as in Gmail account</li>
+</ul>
+</li>
+</ul>
+<h2 id="mms-setup">MMS setup</h2>
+<p>Tested on T-Mobile in Poland. (In fact <a href="https://www.t-mobile.pl/informacje-i-pomoc/pomoc-techniczna/konfiguracja-mms">T-Mobile configuration</a> didn't work, I had to add 8080 port number.)
+If you use different provider, check its server configuration.</p>
+<ul>
+<li>Create access point:
+<ul>
+<li>Settings -&gt; Connection -&gt; Packet data -&gt; Access point -&gt; &quot;MMS&quot;</li>
+</ul>
+</li>
+<li>In Target Networks add MMS access point in MMS group</li>
+<li>Set MMS access point settings:
+<ul>
+<li>MMS</li>
+<li>Packet data</li>
+<li>mms</li>
+<li>mms</li>
+<li>No</li>
+<li>Leave empty</li>
+<li>Normal</li>
+<li>http://mms/servlets/mms</li>
+<li>Automatic</li>
+<li>Options -&gt; Advanced settings
+<ul>
+<li>IPv4</li>
+<li>Automatic</li>
+<li>Automatic</li>
+<li>213.158.194.226</li>
+<li>8080</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Main menu -&gt; Messages -&gt; Options -&gt; Settings -&gt; MMS -&gt; Access Point in use -&gt; MMS</li>
+</ul>
+<h2 id="maps-setup">Maps setup</h2>
+<ul>
+<li><a href="https://github.com/artem78/s60-maps">Here</a> you can find awesome Open Street Maps for Symbian.</li>
+</ul>
+<h2 id="increase-gps-startup-speed">Increase GPS startup speed</h2>
+<ul>
+<li>Disable all location sources expect unassisted GPS</li>
+<li>Open maps to enable GPS in your phone and perform cold start</li>
+<li>Enable all other location sources</li>
+<li>Set location server to supl.grapheneos.org (or supl.google.com)</li>
+<li>Longer explanation can be found <a href="https://github.com/mahomaps/mm-v1">here</a></li>
+</ul>
+<h2 id="some-random-usefull-links">Some random usefull links</h2>
+<ul>
+<li><a href="https://www.reddit.com/r/symbian/comments/12na59p/making_gmail_work_in_nokia_e72_native_email_client/">Email configuration</a></li>
+<li><a href="https://www.youtube.com/watch?v=INwZxfjluK8">Email configuration</a></li>
+<li><a href="https://phoneky.co/applications/?q=calendar">Symbian apps</a></li>
+<li><a href="https://www.mobilneforum.pl/archive/index.php/f-7.html">Patches (polish)</a></li>
+<li><a href="https://lpcwiki.miraheze.org/wiki/Developing_for_old_phones/PyS60">Python for Symbian</a></li>
+<li><a href="https://web.archive.org/web/20081219051632/http://www.mobilenin.com/pys60/menu.htm">Python for Symbian</a></li>
+<li><a href="https://wade.be/no-message-alerts-problem-on-nokia-n95/">Fix for missing SMS notifications (not tested yet)</a></li>
+</ul>
+<p>Huge thanks for <a href="https://archive.org/">Internet Archive</a> and <a href="https://nokiahacking.pl">Nokia Hacking</a> for existing.</p>
+<p>wojtekboh10</p>
+<p>v1.0.0</p>
+
+</body>
+</html>
