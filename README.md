@@ -2,7 +2,7 @@
 
 ## How to configure your Nokia Symbian phone in 2026.
 
-Here is some information I would like to know before I started using Nokia E52 as my daily device.
+Here is some information I would like to know before I started using [Nokia E52](https://en.wikipedia.org/wiki/Nokia_E52/E55) as my daily device.
 It's just a cheat sheet, not a foolproof, step by step instruction.
 Let me know in [issues](https://github.com/wojtekboh10/symbian-setup-sheet/issues) if something is confusing or wrong.
 I'll maybe add it to this sheet (or only answer with message).
@@ -15,9 +15,9 @@ All described things were tested on my phone in polish language, so there may be
 | Phone calls  | -             | -                 | -                       | -               |
 | SMS          | -             | -                 | -                       | -               |
 | MMS          | **Required**  | -                 | -                       | -               |
-| Email        | **Required**  | Optional          | **Recommended**         | **Recommended** |
-| Web browsing | -             | **Required**      | -                       | Optional        |
-| Maps         | -             | **Required**      | -                       | Optional        |
+| Email        | **Required**  | [Optional](https://www.lonelycatgames.com/apps/profimail-symbian)          | **Recommended**         | **Recommended** |
+| Web browsing | -             | [**Required**](http://www.m.opera.com/?act=opts&vid=0x9c7f9c859a2dd90a&ua=NokiaE90)      | -                       | Optional        |
+| Maps         | -             | [**Required**](https://github.com/artem78/s60-maps)      | -                       | Optional        |
 | Basic GPS    | -             | -                 | -                       | -               |
 | Assisted GPS | **Required**  | -                 | -                       | **Required**    |
 
@@ -34,20 +34,20 @@ Why? To be sure that any old software on your phone won't cause problems.
 Why? Because you won't be able to install most software until you do this.
 
 - Set date to 7.07.2022
-- Install X-plore
+- Install [X-plore](https://www.lonelycatgames.com/apps/xplore-symbian)
 - Configure X-plore
     - Menu -> Tools -> Configuration
     - Show ROM drive
     - Show RAM drive
     - Show system folders
-- Unpack tmquarantine.zip to C: drive
+- Unpack [tmquarantine.zip](https://mega.nz/folder/jH4QAL5J#jUQJTDDSmU-5z_GJBCMJAg/folder/uGw2nZqR) to C: drive
     - Highlight tmquarantine.zip in X-plore
     - Menu -> File -> Open
     - Highlight tmquarantine
     - Menu -> File -> Extract to
     - Highlight C: drive
     - Menu -> File -> Select
-- Install TM Mobile Security
+- Install [TM Mobile Security](https://mega.nz/folder/jH4QAL5J#jUQJTDDSmU-5z_GJBCMJAg/folder/uGw2nZqR)
     - Set date to 7.07.2011
     - Install
     - Reset the phone
@@ -57,24 +57,26 @@ Why? Because you won't be able to install most software until you do this.
     - Options -> Mark All
     - Options -> Restore
     - Uninstall TM Mobile Security
-- Install ROM Patcher Plus
+- Install [ROM Patcher Plus](https://mega.nz/folder/jH4QAL5J#jUQJTDDSmU-5z_GJBCMJAg/folder/uGw2nZqR)
     - Set date to 7.07.2015
     - Install
     - You can set date to current
-- Before you install any software on your phone you need to open ROM Patcher Plus, switch both Install Server RP+ and Open4All RP+ to green (not blue).
+- Before you install any software on your phone you need to open ROM Patcher Plus, switch both Install Server RP+ and Open4All RP+ to green (not blue)
+
+Alternative instructions: [text](https://lpcwiki.miraheze.org/wiki/Jailbreaking_S60_devices), [video](https://www.youtube.com/watch?v=ewrOsBmLaLM)
 
 ## Internet connection setup (To validate)
 
 Why? To test if it even works and configure switching to Wi-Fi if available (optional).
 
-- Install Opera Mini web browser
+- Install [Opera Mini](http://www.m.opera.com/?act=opts&vid=0x9c7f9c859a2dd90a&ua=NokiaE90) web browser
 - Control Panel -> Settings -> Connection -> Target Networks -> Internet
 - Add packet data to Internet group
 - Test Opera Mini in some basic pages (google.com, wikipedia.org)
 
 To configure automatic switch to Wi-fi if available:
 - Add Wi-fi connections
-- Install and configure SmartConnect (it could already be preinstalled, search for icon with antenna and "SC" name)
+- Install and configure [SmartConnect](https://web.archive.org/web/20100813202340/http://www.birdstep.com/upload/Enterprise/smartconnect/Birdstep_SmartConnect_1.3.55-tct_sign.zip) (it could already be preinstalled, search for icon with antenna and "SC" name)
     - New Group
     - Group name: abc (or anything)
     - On better connection: Stay connected
@@ -88,16 +90,16 @@ To configure automatic switch to Wi-fi if available:
 ## Internet fixes
 
 Some fixes are required for certain software to work. You can install them all, or test if they are necessary for you.
-- Networking Improvements
+- [Networking Improvements](https://github.com/mrRosset/Symbian-Archive/files/7231059/CACerts-2021-update.zip)
     - Required at least for email configuration
     - Export networking_improvements.zip to C: drive while the phone is unlocked
-- TLS 1.2 upgrade
+- [TLS 1.2](https://nnproject.cc/tls/) upgrade
     - Required to speed up GPS localization
     - Install MBedTLS.sis (Select to install TLS 1.2 only, deselect CA Upgrade)
     - Extract ssl.zip to C: drive while the phone is unlocked
 - CACerts update
     - Optional, it may help in some cases (I think it's inside TLS upgrade as well.)
-    - Extract CACerts.zip to C: drive while the phone is unlocked
+    - Extract [CACerts.zip](https://github.com/mrRosset/Symbian-Archive/files/7231059/CACerts-2021-update.zip) to C: drive while the phone is unlocked
 
 ## Email setup
 
@@ -166,5 +168,18 @@ If you use different provider, check its server configuration.
 - Enable all other location sources
 - Set location server to supl.grapheneos.org (or supl.google.com)
 - Longer explanation can be found [here](https://github.com/mahomaps/mm-v1)
+
+## Some random usefull links
+
+- [Email configuration](https://www.reddit.com/r/symbian/comments/12na59p/making_gmail_work_in_nokia_e72_native_email_client/)
+- [Email configuration](https://www.youtube.com/watch?v=INwZxfjluK8)
+- [Symbian apps](https://phoneky.co/applications/?q=calendar)
+- [Patches (polish)](https://www.mobilneforum.pl/archive/index.php/f-7.html)
+- [Python for Symbian](https://lpcwiki.miraheze.org/wiki/Developing_for_old_phones/PyS60)
+- [Python for Symbian](https://web.archive.org/web/20081219051632/http://www.mobilenin.com/pys60/menu.htm)
+- [Fix for missing SMS notifications (not tested yet)](https://wade.be/no-message-alerts-problem-on-nokia-n95/)
+
+
+Huge thanks for [Internet Archive](https://archive.org/) and [Nokia Hacking](https://nokiahacking.pl) for existing.
 
 wojtekboh10
