@@ -152,11 +152,6 @@ If you use different provider, check its server configuration.
         - 8080
 - Main menu -> Messages -> Options -> Settings -> MMS -> Access Point in use -> MMS
 
-## Minor things
-
-- Change theme to dark one with Darkmod.sis
-- Disable camera sounds with QuietCam.sis
-
 ## Maps setup
 
 - [Here](https://github.com/artem78/s60-maps) you can find awesome Open Street Maps for Symbian.
@@ -183,3 +178,5 @@ If you use different provider, check its server configuration.
 Huge thanks for [Internet Archive](https://archive.org/) and [Nokia Hacking](https://nokiahacking.pl) for existing.
 
 wojtekboh10
+
+v1.0.0
